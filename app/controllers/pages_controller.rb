@@ -1,11 +1,7 @@
-class PagesController < ActionController::Base
+class PagesController < ApplicationController
 
   def home
-    render :home
-  end
-
-  def about
-    render :about
+    # render :home
   end
 
 end
