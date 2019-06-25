@@ -45,4 +45,15 @@ class ChefTest < ActiveSupport::TestCase
       assert_not @chef.valid?, "#{invalid.inspect} should be invalid"
     end
   end
+
+  test 'email should be unique and case insensitive' do
+    duplicate_chef = @chef.dup
+    duplicate_chef.email = @chef.email.upcase
+    @chef.save
+    assert_not duplicate_chef.valid?
+  end
+
+  test 'email should be case sensitive' do
+
+  end
 end
